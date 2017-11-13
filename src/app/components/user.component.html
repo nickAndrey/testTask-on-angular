@@ -1,0 +1,29 @@
+<div class="content-items">
+    <div class="post-item" *ngFor="let post of posts | paginate: { itemsPerPage: 15, currentPage: page }">
+        <img src="{{post.thumbnailUrl}}" />
+        <span class="item-subscribe">{{post.title}}</span>
+    </div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+    <div class="popUp">
+        <div class="popUp-cont">
+            <div class="popUp-title">
+                <div class="title-text">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    <p>Brak serwerów czasu</p>
+                </div>
+                <div class="close-but" (click)="togglePopUp()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="popUp-info">
+                Aby dodać kliknij “Dodaj”
+            </div>
+            <div class="popUp-buttons">
+                <button type="button" name="button">Anuluj</button>
+                <button type="button" name="button">Dodaj</button>
+            </div>
+        </div>
+    </div>
+
+</div>
